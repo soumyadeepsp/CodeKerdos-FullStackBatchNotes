@@ -1,0 +1,34 @@
+p {
+    color: green;
+}
+
+@media (max-width: 600px) {
+    p {
+        color: blue;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    p {
+        color: red;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+    p {
+        color: purple;
+    }
+}
+
+@media print and (min-width: 1200px) and (max-width: 1500px), 
+       screen and (min-width: 1200px) and (max-width: 1500px) {
+    p {
+        color: orange;
+    }
+}
+
+@media (min-width: 1500px) {
+    p {
+        color: pink;
+    }
+}
