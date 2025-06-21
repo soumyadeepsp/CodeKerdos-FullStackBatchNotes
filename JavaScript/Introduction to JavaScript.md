@@ -233,3 +233,9 @@ Boolean of only null, undefined, 0, and empty string is false. Rest everything i
 6. + - it helps us to convert just a string into an integer.
 +"42" = 42
 +"abc" = NaN
+
+Undefined with any arithmetic operation with a number always results in NaN.
+5 + undefined = NaN
+5 - undefined = NaN
+5 * undefined = NaN
+5 / undefined = NaN
