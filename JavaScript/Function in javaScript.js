@@ -93,3 +93,22 @@ var result = sum(2, 3); // Here result will be 5
 console.log(result); // This will print 5
 console.log(sum(2, 3)); // This will also print 5
 
+// REST OPERATOR IN FUNCTION PARAMETERS
+// The rest operator (...) allows you to pass an indefinite number of arguments to a function
+function sum(...arr) {
+  let total = 0;
+  for (var i=0; i<arr.length; i++) {
+    total += arr[i]; // Adds each number in the args array
+  }
+  return total; // Returns the sum of all numbers
+}
+console.log(sum(1, 2, 3)); // Outputs: 6
+console.log(sum(10, 20, 30, 40)); // Outputs: 100
+console.log(sum(5, 10, 15, 20, 25)); // Outputs: 75
+// You can also use the rest operator in combination with other parameters
+function multiply(factor, ...numbers) {
+  return numbers.map(num => num * factor); // Multiplies each number in the args array by the factor
+}
+console.log(multiply(2, 1, 2, 3)); // Outputs: [2, 4, 6]
+console.log(multiply(3, 4, 5)); // Outputs: [12, 15]
+// rest parameter should be the last parameter

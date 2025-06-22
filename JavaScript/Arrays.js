@@ -115,7 +115,7 @@ arr.splice(2, 1); // This will remove 1 item from index 2 and not add any items
 // arr will be [10, "Hello", null, undefined]
 // After giving the index and the number of elements to delete, whatever elements more you pass on are added from that index.
 
-// REST OPERATOR IN FUNCTION PARAMETERS
+// REST/SPREAD OPERATOR IN FUNCTION PARAMETERS
 // The rest operator (...) allows you to pass an indefinite number of arguments to a function
 function sum(...arr) {
   let total = 0;
@@ -134,3 +134,60 @@ function multiply(factor, ...numbers) {
 console.log(multiply(2, 1, 2, 3)); // Outputs: [2, 4, 6]
 console.log(multiply(3, 4, 5)); // Outputs: [12, 15]
 // rest parameter should be the last parameter
+
+// SPREAD OPERATOR IN ARRAYS
+// The spread operator (...) allows you to expand an array into its individual elements
+var arr1 = [1, 2, 3];
+var arr2 = [4, 5, 6];
+// You can use the spread operator to concatenate two arrays
+var arr3 = [...arr1, ...arr2]; // This will return a new array [1, 2, 3, 4, 5, 6]
+// The original arrays will remain unchanged
+// this works the same way as the concat function. you can either use the concat function or the spread oeprator.
+// A better programming practice is to use the spread operator
+
+// SPREAD OPERATOR IS ALSO USED TO COPY AN ARRAY
+var arr4 = [...arr1]; // This will return a new array [1, 2, 3]
+// The original array will remain unchanged
+// This is a better way to copy an array than using the slice() method
+
+// SHALLOW COPY AND DEEP COPY
+// A shallow copy creates a new array that references the original array itself
+// This happens because arrays are non-primitive data types in JS and are stored indirectly through referencing
+// shallow copy and deep copy scenario occurs only in non-primitive data types
+// in primitive data types, the value is stored directly in the variable and thus they can only have deep copies and never shallow copy
+// Deep copy means that if I assign the value of a variable to another variable
+// For example, if I say var b = a; Now if I change the value of a, it will not reflect or change b
+// Simultaneously, if I change the value of b, it will not affect the value of a
+// this is called deep copy
+// But in shallow copy, if I change the value of a or b, it will also reflect the change in the other variable
+var a = [1,2,3,4,5];
+var b = a; // this will always do deep copy in primitives and shallow copy in non-primitives
+
+console.log(a);
+console.log(b);
+
+b[1] = 20;
+console.log(a);
+console.log(b);
+
+a[2] = 30;
+console.log(a);
+console.log(b);
+// Whether I make the change in a or b, it will reflect in both the arrays
+// This is because both a and b are referencing the same array in memory
+
+// DEEP COPY IN NON PRIMITIVE DATA TYPES ARE DONE USING SPREAD OPERATOR
+var a = [1,2,3,4,5];
+var b = [... a];
+
+console.log(a);
+console.log(b);
+
+b[1] = 20;
+console.log(a);
+console.log(b);
+
+a[2] = 30;
+console.log(a);
+console.log(b);
+// now the change coms in ony either a or b and not in both of them
